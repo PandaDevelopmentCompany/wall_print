@@ -1,4 +1,4 @@
-const token = '7393898003:AAHyOAVTkz8-kpx7zFhBu62C6GqO23Knlz4';
+const token = '7738919764:AAECEuRqdJXpYrEaFIlbd72-xjhlYR_9Ec4';
 const chatId = '746586393';
 const URL_API = 'https://api.telegram.org/';
 
