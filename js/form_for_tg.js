@@ -17,3 +17,22 @@ text: message,
 .catch(error => console.error(error));
 }
 });
+
+
+
+
+const messageInput1 = document.getElementById('messageInput1');
+const sendButton1 = document.getElementById('sendButton1');
+
+sendButton1.addEventListener('click', (event) => {
+event.preventDefault();
+const message = 'Имя : ' + sendName1.value + '\nНомер телефона: ' + " " + sendTel1.value + '\nКомментарии к заявке: ' + messageInput1.value;
+if (message) {
+axios.post(`${URL_API}bot${token}/sendMessage`, {
+chat_id: chatId,
+text: message,
+})
+.then(response => console.log(response), alert('Ваше сообщение успешно отправлено!✅ \nМы обязательно свяжемся с вами! \nСпасибо!💚'))
+.catch(error => console.error(error));
+}
+});
