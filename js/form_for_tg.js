@@ -7,7 +7,7 @@ const sendButton = document.getElementById('sendButton');
 
 sendButton.addEventListener('click', (event) => {
 event.preventDefault();
-const message = 'Имя : ' + sendName.value + '\nНомер телефона: ' + " " + sendTel.value + '\nКомментарии к заявке: ' + messageInput.value;
+const message = 'Name : ' + sendName.value + '\nPhone number: ' + " " + sendTel.value + '\nApplication comment: ' + messageInput.value;
 if (message) {
 axios.post(`${URL_API}bot${token}/sendMessage`, {
 chat_id: chatId,
@@ -26,7 +26,7 @@ const sendButton1 = document.getElementById('sendButton1');
 
 sendButton1.addEventListener('click', (event) => {
 event.preventDefault();
-const message = 'Имя : ' + sendName1.value + '\nНомер телефона: ' + " " + sendTel1.value + '\nКомментарии к заявке: ' + messageInput1.value;
+const message = 'Name : ' + sendName.value + '\nPhone number: ' + " " + sendTel.value + '\nApplication comment: ' + messageInput.value;
 if (message) {
 axios.post(`${URL_API}bot${token}/sendMessage`, {
 chat_id: chatId,
