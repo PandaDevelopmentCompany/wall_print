@@ -1,5 +1,5 @@
 const token = '7738919764:AAECEuRqdJXpYrEaFIlbd72-xjhlYR_9Ec4';
-const chatId = '746586393';
+const chatId = '238576207';
 const URL_API = 'https://api.telegram.org/';
 
 const messageInput = document.getElementById('messageInput');
