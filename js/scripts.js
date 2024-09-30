@@ -267,12 +267,8 @@ function calculatePrice() {
         price =  Math.round(squareMeters * 18);
         
     } else if (squareMeters >= 50 && squareMeters < 100) {
-        price = Math.round(squareMeters * 17);
-    } else if (squareMeters >= 100 && squareMeters < 200) {
         price = Math.round(squareMeters * 16);
-    } else if (squareMeters >= 200 && squareMeters < 300) {
-        price = Math.round(squareMeters * 15);
-    } else if (squareMeters >= 30) {
+    } else if (squareMeters >= 100) {
         price = "<span>Special price</span>";
         priceElement.setAttribute('data-unit', '');
     }
