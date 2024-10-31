@@ -13,37 +13,34 @@ sendButton.addEventListener('click', (event) => {
                     '\nPhone number: ' + sendTel.value + 
                     '\nApplication comment: ' + messageInput.value;
     
+    let promises = []; // Массив для хранения промисов
+
     chatIds.forEach(chatId => {
-        // Если файл выбран, отправляем его
+        const formData = new FormData();
+        formData.append('chat_id', chatId);
         if (fileInput.files.length > 0) {
-            const formData = new FormData();
-            formData.append('chat_id', chatId);
             formData.append('caption', message); // Добавляем сообщение как подпись
             formData.append('document', fileInput.files[0]);
-
-            axios.post(`${URL_API}bot${token}/sendDocument`, formData, {
+            promises.push(axios.post(`${URL_API}bot${token}/sendDocument`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
-            })
-            .then(response => {
-                console.log(response);
-                alert('Your message and file have been successfully sent!✅ \nWe will definitely contact you! \nThank you!💚');
-            })
-            .catch(error => console.error(error));
+            }));
         } else {
-            // Отправляем только текстовое сообщение, если файл не выбран
-            axios.post(`${URL_API}bot${token}/sendMessage`, {
+            promises.push(axios.post(`${URL_API}bot${token}/sendMessage`, {
                 chat_id: chatId,
                 text: message,
-            })
-            .then(response => {
-                console.log(response);
-                alert('Your message has been successfully sent!✅ \nWe will definitely contact you! \nThank you!💚');
-            })
-            .catch(error => console.error(error));
+            }));
         }
     });
+
+    // Ждем, пока все промисы завершатся
+    Promise.all(promises)
+        .then(responses => {
+            console.log(responses);
+            alert('Your message has been successfully sent!✅ \nWe will definitely contact you! \nThank you!💚');
+        })
+        .catch(error => console.error(error));
 });
 
 
