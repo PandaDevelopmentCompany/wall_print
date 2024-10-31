@@ -47,7 +47,7 @@ A MODERN SOLUTION FOR ANY INTERIOR
         <header class="header">
             <div class="inner-wrap">
                 <div class="logo-wrap">
-                    <a href="/" class="logo">
+                    <a href="index.html" class="logo">
                         <div class="elm-dots"><span></span></div>
                         <div class="logo-title">Wall printing</div>
                     </a>
@@ -1323,7 +1323,7 @@ A MODERN SOLUTION FOR ANY INTERIOR
                                     </div>
                                 </div>
                             </div>
-                            <div style="display: none !important;" class="frm-field field-half">
+                            <div style="margin: 0 auto;" class="frm-field field-half">
                                 <div class="frm-field-input field-dark">
                                     <div class="field-title">Your comments</div>
                                     <div class="field-input">
@@ -1463,7 +1463,7 @@ A MODERN SOLUTION FOR ANY INTERIOR
                         <div class="frm-row">
                             <div class="frm-field">
                                 <div class="frm-field-file js-field-file">
-                                    <input type="file" id="file" class="js-field-input" name="file">
+                                    <input type="file" id="fileInput" class="js-field-input" name="file">
                                     <button type="button" class="btn-file js-file-button" data-title="Attach a file"   >
                                         <span class="button-title">Attach a file</span>
                                     </button>
@@ -1478,7 +1478,7 @@ A MODERN SOLUTION FOR ANY INTERIOR
                         </div>
                         <div class="frm-row-submit">
                             <div class="frm-field">
-                                <button id="sendButton" type="submit" class="btn button-light button-content">
+                                <button id="sendButton" type="submit" class="btn button-light button-content" onclick="this.closest('.popup-outer-box').classList.remove('active');document.body.classList.remove('popup-open');return false;">
                                     <div class="button-title">Submit</div>
                                     <div class="button-ico">
                                         <img src="img/icons/play.svg" alt="">
