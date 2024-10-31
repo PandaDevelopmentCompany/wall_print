@@ -45,7 +45,6 @@ sendButton.addEventListener('click', (event) => {
 
 
 
-
 const sendName2 = document.getElementById('sendName2');
 const sendTel2 = document.getElementById('sendTel2');
 const messageInput2 = document.getElementById('messageInput2');
@@ -58,17 +57,19 @@ sendButton2.addEventListener('click', (event) => {
                     '\nPhone number: ' + sendTel2.value + 
                     '\nApplication comment: ' + messageInput2.value;
 
-    chatIds.forEach(chatId => {
-        // Отправляем текстовое сообщение
-        axios.post(`${URL_API}bot${token}/sendMessage`, {
+    let promises = chatIds.map(chatId => {
+        return axios.post(`${URL_API}bot${token}/sendMessage`, {
             chat_id: chatId,
             text: message,
-        })
-        .then(response => {
-            console.log(response);
+        });
+    });
+
+    // Ждем, пока все промисы завершатся
+    Promise.all(promises)
+        .then(responses => {
+            console.log(responses);
             alert('Your message has been successfully sent!✅ \nWe will definitely contact you! \nThank you!💚');
         })
         .catch(error => console.error(error));
-    });
 });
 
