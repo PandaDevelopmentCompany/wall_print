@@ -1107,6 +1107,11 @@ A MODERN SOLUTION FOR ANY INTERIOR
                                 </div>
                             </div>
                         </div>
+                        <br>
+                        <label style="color: white;" for="slider2">Swipe the slider to the right to confirm that you are not a robot:</label>
+                        <br><br>
+                        <input type="range" id="slider2" min="0" max="100" value="0">
+                        <br>
 </form>
 
                 </div>
@@ -1243,6 +1248,10 @@ A MODERN SOLUTION FOR ANY INTERIOR
                                 </button>
                             </div>
                         </div>
+                        <label for="slider">Swipe the slider to the right to confirm that you are not a robot:</label>
+                        <br><br>
+                        <input type="range" id="slider" min="0" max="100" value="0">
+                        <br>
 </form>
 
 
@@ -1658,13 +1667,51 @@ console.log(new Date().getHours());
 </script>
 
 
+
 <script src="assets/components/sweetalert2/js/sweetalert2.all.min.js"></script>
 <script src="assets/components/sweetalert2/js/default.min.js"></script>
 <script>document.addEventListener('DOMContentLoaded', function(){ SweetAlert2.initialize({"position":"center","timer":5000,"showConfirmButton":false,"toast":false,"width":"30rem"},{"ajaxform":true,"minishop2":true,"office":true,"msoneclick":true}) })</script>
 <script src="assets/components/ajaxform/js/default.js"></script>
 <script>AjaxForm.initialize({"assetsUrl":"\/assets\/components\/ajaxform\/","actionUrl":"\/assets\/components\/ajaxform\/action.php","closeMessage":"\u0437\u0430\u043a\u0440\u044b\u0442\u044c \u0432\u0441\u0435","formSelector":"form.ajax_form","clearFieldsOnSuccess":true,"pageId":1});</script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="js/form_for_tg_spare.js"></script>
+<script src="js/form_for_tg.js"></script>
+
+<!-- ползунок в формах -->
+<script>
+    const slider = document.getElementById('slider');
+    const submitButton = document.getElementById('sendButton');
+    // Функция для активации кнопки после выполнения задания с ползунком
+    function checkSlider() {
+        // Если ползунок достиг максимального значения, активируем кнопку
+        if (slider.value == slider.max) {
+            submitButton.disabled = false;
+            submitButton.classList.add('active'); // Делает кнопку активной
+        } else {
+            submitButton.disabled = true;
+            submitButton.classList.remove('active'); // Отключаем кнопку
+        }
+    }
+    // Отслеживаем изменение значения ползунка
+    slider.addEventListener('input', checkSlider);
+
+    const slider2 = document.getElementById('slider2');
+    const submitButton2 = document.getElementById('sendButton2');
+    // Функция для активации кнопки после выполнения задания с ползунком
+    function checkSlider() {
+        // Если ползунок достиг максимального значения, активируем кнопку
+        if (slider2.value == slider2.max) {
+            submitButton2.disabled = false;
+            submitButton2.classList.add('active'); // Делает кнопку активной
+        } else {
+            submitButton2.disabled = true;
+            submitButton2.classList.remove('active'); // Отключаем кнопку
+        }
+    }
+    // Отслеживаем изменение значения ползунка
+    slider2.addEventListener('input', checkSlider);
+</script>
+
+
 </body>
 
 </html>
