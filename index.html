@@ -1697,18 +1697,18 @@ console.log(new Date().getHours());
     const slider2 = document.getElementById('slider2');
     const submitButton2 = document.getElementById('sendButton2');
     // Функция для активации кнопки после выполнения задания с ползунком
-    function checkSlider() {
+    function checkSlider2() {
         // Если ползунок достиг максимального значения, активируем кнопку
         if (slider2.value == slider2.max) {
             submitButton2.disabled = false;
-            submitButton2.classList.add('active'); // Делает кнопку активной
+            submitButton2.classList.add('active2'); // Делает кнопку активной
         } else {
             submitButton2.disabled = true;
-            submitButton2.classList.remove('active'); // Отключаем кнопку
+            submitButton2.classList.remove('active2'); // Отключаем кнопку
         }
     }
     // Отслеживаем изменение значения ползунка
-    slider2.addEventListener('input', checkSlider);
+    slider2.addEventListener('input', checkSlider2);
 </script>
 
 

@@ -170,7 +170,7 @@ a.videolink {
             }
     
             /* Стили для активной кнопки */
-            #sendButton2.active {
+            #sendButton2.active2 {
                 cursor: pointer;
                 opacity: 1;
                 pointer-events: auto !important;
