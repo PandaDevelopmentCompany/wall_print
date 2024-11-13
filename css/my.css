@@ -154,4 +154,10 @@ a.videolink {
                 pointer-events: auto !important;
             }
             
-    
+
+    .page-full {
+        padding-top: 30px !important;
+    }
+
+
+
