@@ -167,3 +167,12 @@ a.videolink {
         width: 100% !important;
     }
 }
+
+.main_link_contact {
+    font-size: 15px !important;
+}
+@media screen and (max-width: 768px) {
+    .main_link_contact {
+        font-size: 12px !important;
+    }
+}
